@@ -231,9 +231,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
-    if (self.navigationItem.title == nil) {
-        self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    }
+    self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     
     [self updateToolbarItems];
     
