@@ -16,9 +16,9 @@
 
 - (UIImage *)activityImage {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-        return [UIImage imageNamed:[self.activityType stringByAppendingString:@"-iPad"]];
+        return [UIImage imageNamed:[self.activityType stringByAppendingString:@"-iPad"] inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     else
-        return [UIImage imageNamed:self.activityType];
+        return [UIImage imageNamed:self.activityType inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
 }
 
 - (void)prepareWithActivityItems:(NSArray *)activityItems {
