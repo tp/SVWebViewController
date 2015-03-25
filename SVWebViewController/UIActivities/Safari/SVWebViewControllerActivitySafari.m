@@ -15,10 +15,6 @@
 	return NSLocalizedStringFromTableInBundle(@"Open in Safari", @"SVWebViewController", [NSBundle bundleForClass:[self class]], nil);
 }
 
-- (UIImage *)activityImage {
-    return [UIImage imageNamed:@"SVWebViewControllerActivitySafari" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
-}
-
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems {
 	for (id activityItem in activityItems) {
 		if ([activityItem isKindOfClass:[NSURL class]] && [[UIApplication sharedApplication] canOpenURL:activityItem]) {
