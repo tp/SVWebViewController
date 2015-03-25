@@ -12,7 +12,11 @@
 @implementation SVWebViewControllerActivitySafari
 
 - (NSString *)activityTitle {
-	return NSLocalizedStringFromTable(@"Open in Safari", @"SVWebViewController", nil);
+	return NSLocalizedStringFromTableInBundle(@"Open in Safari", @"SVWebViewController", [NSBundle bundleForClass:[self class]], nil);
+}
+
+- (UIImage *)activityImage {
+    return [UIImage imageNamed:@"SVWebViewControllerActivitySafari" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
 }
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems {
